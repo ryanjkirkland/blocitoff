@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/show'
-
   get 'welcome/index'
 
   authenticated :user do
