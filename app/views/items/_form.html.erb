@@ -1,0 +1,6 @@
+<%= form_for @item do |i| %>
+  <div class="form-group">
+    <%= i.label :name %>
+    <%= i.text_field :name, class: "form-control", placeholder: "Task name..." %>
+  </div>
+<% end %>

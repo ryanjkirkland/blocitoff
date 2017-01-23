@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
+
+before_action :require_sign_in
+
   def create
-    @item = Item.new
-    @item.name = params[:item][:name]
-    @item.user_id = current_user
+    @user = current_user
+    @item = @user.items.new(item_params)
     @item.completed = false
 
     if @item.save
@@ -11,5 +13,11 @@ class ItemsController < ApplicationController
       flash[:alert] = "There was an error creating this item."
     end
     redirect_to users_show
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name)
   end
 end
