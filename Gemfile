@@ -41,6 +41,9 @@ gem 'bootstrap-sass'
 #Faker for seed data
 gem 'faker'
 
+#Whenever for running automated Rake tasks
+gem 'whenever', :require => false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
