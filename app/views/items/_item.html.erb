@@ -2,6 +2,7 @@
   <div class="col-md-3"></div>
   <div id="<%= item.id %>" class="task-area">
     <h2 class="task"><%= item.name %></h2>
+    <p>Created <%= distance_of_time_in_words(item.created_at, Time.now, include_seconds: true) %> ago </p>
     <%= link_to "Delete Item", [current_user, item], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this post?'}, remote: :true %>
   </div>
 <% end %>
