@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :users do
-    resources :items, only: :create
+    resources :items, only: [:create, :destroy]
   end
 
   authenticated :user do
